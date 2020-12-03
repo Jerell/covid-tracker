@@ -18,8 +18,11 @@ export default {
 @import '@design';
 
 .container {
+  position: relative;
+  box-sizing: border-box;
   min-width: $size-content-width-min;
   max-width: $size-content-width-max;
+  height: 90vh;
   padding: 0 10px;
   margin: 0 auto;
 }

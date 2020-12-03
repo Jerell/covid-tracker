@@ -13,7 +13,7 @@ export default {
 
 <template>
   <Layout>
-    <h1 class="title">Symptom Checker</h1>
+    <h1 class="title has-text-white">Symptom Checker</h1>
     <SymptomChecker></SymptomChecker>
     <b-button type="is-link" class="my-3" expanded>Book a test</b-button>
     <b-button type="is-link is-light" class="my-3" expanded

@@ -40,7 +40,7 @@ export default {
 
 <template>
   <Layout>
-    <h1 class="subtitle is-3"
+    <h1 class="subtitle is-3 has-text-white"
       >{{ message }}
       <b-button
         :class="{ 'is-primary is-light': editing }"

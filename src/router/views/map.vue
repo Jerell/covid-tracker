@@ -12,7 +12,7 @@ export default {
 
 <template>
   <Layout>
-    <h1 class="title">Map</h1>
+    <h1 class="title has-text-white">Map</h1>
     <p>
       This is gonna show restrictions by region across the UK.
     </p>

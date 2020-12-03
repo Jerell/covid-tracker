@@ -29,7 +29,16 @@ export default {
         to={route}
         exact-active-class={$style.active}
       >
-        <a class='py-1'>{getRouteTitle(route)}</a>
+        <a>
+          <div class='tile is-parent p-0'>
+            <div class='tile is-1 is-child'>
+              <span class='p-3 mr-1'>
+                <b-icon icon={route.icon}></b-icon>
+              </span>
+              <span>{getRouteTitle(route)}</span>
+            </div>
+          </div>
+        </a>
       </BaseLink>
     ))
   },
@@ -38,11 +47,14 @@ export default {
 
 <style lang="scss" module>
 @import '@design';
-a {
-  display: inline-block;
-}
 li {
-  border-bottom: 1px solid #ccc;
+  margin-right: 0;
+  margin-bottom: 0.5em;
+  background: #222a30;
+  border-radius: 12px;
+  span {
+    display: inline-block;
+  }
 }
 .active a {
   font-weight: 600;

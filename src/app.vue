@@ -41,9 +41,12 @@ export default {
 *::before,
 *::after {
   box-sizing: border-box;
+  max-width: 100vw;
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background: $color-body-bg;
 }
 #app {
