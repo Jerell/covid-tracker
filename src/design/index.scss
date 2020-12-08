@@ -6,8 +6,9 @@
 @import 'typography';
 
 .title:first-of-type {
-  background: #003b49;
-  box-shadow: 10px 0 #003b49, -10px 0 #003b49;
+  background: lighten($color-body-bg, 10%);
+  box-shadow: 10px 0 lighten($color-body-bg, 10%),
+    -10px 0 lighten($color-body-bg, 10%);
 }
 
 :export {

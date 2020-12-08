@@ -48,18 +48,19 @@ export default {
 <style lang="scss" module>
 @import '@design';
 li {
+  display: block;
+  margin-right: $size-grid-padding;
   margin-right: 0;
   margin-bottom: 0.5em;
-  background: #222a30;
+  overflow: hidden;
+  text-align: left;
+  background: lighten($color-body-bg, 10%);
   border-radius: 12px;
   span {
     display: inline-block;
   }
-}
-.active a {
-  font-weight: 600;
-  color: $color-link-text-active;
-  text-decoration: none;
-  cursor: default;
+  span:first-child {
+    background: lighten($color-body-bg, 30%);
+  }
 }
 </style>

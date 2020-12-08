@@ -22,7 +22,7 @@ export default {
   box-sizing: border-box;
   min-width: $size-content-width-min;
   max-width: $size-content-width-max;
-  height: 90vh;
+  height: 100%;
   padding: 0 10px;
   margin: 0 auto;
 }

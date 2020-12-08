@@ -56,19 +56,21 @@ export default {
 </script>
 
 <template>
-  <div class="is-ancestor">
-    <ul :class="$style.container">
-      <NavBarRoutes :routes="persistentNavRoutes" />
-      <NavBarRoutes v-if="loggedIn" :routes="loggedInNavRoutes" />
-      <!-- <NavBarRoutes v-else :routes="loggedOutNavRoutes" /> -->
-    </ul>
-  </div>
+  <section class="nav">
+    <div class="is-ancestor">
+      <ul :class="$style.container">
+        <NavBarRoutes :routes="persistentNavRoutes" />
+        <NavBarRoutes v-if="loggedIn" :routes="loggedInNavRoutes" />
+        <!-- <NavBarRoutes v-else :routes="loggedOutNavRoutes" /> -->
+      </ul>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" module>
 @import '@design';
 
-.container {
+section.nav {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -76,11 +78,5 @@ export default {
   margin: 0 0 $size-grid-padding;
   text-align: center;
   list-style-type: none;
-
-  > li {
-    display: block;
-    margin-right: $size-grid-padding;
-    text-align: left;
-  }
 }
 </style>
