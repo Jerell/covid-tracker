@@ -5,7 +5,8 @@
 @import 'sizes';
 @import 'typography';
 
-.title:first-of-type {
+.title:first-of-type,
+.status p {
   background: lighten($color-body-bg, 10%);
   box-shadow: 10px 0 lighten($color-body-bg, 10%),
     -10px 0 lighten($color-body-bg, 10%);

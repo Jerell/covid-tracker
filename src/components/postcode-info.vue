@@ -22,8 +22,11 @@ export default {
 
 <template>
   <section v-if="postcode.length > 0">
-    <p>Your postcode district is: {{ postcode }}</p>
-    <p>Risk level: {{ risk }}</p>
+    <div class="status">
+      <p>Your postcode district</p>
+      <h3 class="title has-text-white is-3">{{ postcode }}</h3>
+      <h4 class="title has-text-white is-4">Risk level: {{ risk }}</h4>
+    </div>
     <p class="my-2">The restrictions in place are as follows:</p>
     <p v-for="r in restrictions.slice(0, risk)" :key="r">{{ r }}</p>
   </section>
@@ -31,4 +34,9 @@ export default {
 
 <style lang="scss" module>
 @import '@design';
+.status {
+  > h3 {
+    border-bottom: 10px solid red;
+  }
+}
 </style>
