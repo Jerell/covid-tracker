@@ -1,43 +1,51 @@
 <template>
   <section class="pt-1">
-    <b-message>
-      <p>
-        <span class="has-text-weight-bold">
-          A high temperature
-        </span>
-        – this means you feel hot to touch on your chest or back (you do not
-        need to measure your temperature)
-      </p>
-    </b-message>
-    <b-message>
-      <p>
-        <span class="has-text-weight-bold">
-          A new, continuous cough
-        </span>
-        – this means coughing a lot for more than an hour, or 3 or more coughing
-        episodes in 24 hours (if you usually have a cough, it may be worse than
-        usual)
-      </p>
-    </b-message>
-    <b-message>
-      <p>
-        <span class="has-text-weight-bold">
-          A loss or change to your sense of smell or taste
-        </span>
-        – this means you've noticed you cannot smell or taste anything, or
-        things smell or taste different to normal
-      </p>
-    </b-message>
+    <individualsymptom
+      v-for="(symptom, i) in symptoms"
+      :key="i"
+      v-bind="symptom"
+      :n="i"
+      @toggle="toggleAffected"
+    ></individualsymptom>
   </section>
 </template>
 
 <script>
+import individualsymptom from '@components/individual-symptom.vue'
 export default {
+  components: { individualsymptom },
   data() {
     return {
-      name: '',
+      symptoms: [
+        {
+          lead: 'A high temperature',
+          desc:
+            'this means you feel hot to touch on your chest or back (you do not need to measure your temperature)',
+          affected: false,
+        },
+        {
+          lead: 'A new, continuous cough',
+          desc:
+            'this means coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours (if you usually have a cough, it may be worse than usual)',
+          affected: false,
+        },
+        {
+          lead: 'A loss or change to your send of smell or taste',
+          desc:
+            "this means you've noticed you cannot smell or taste anything, or things smell or taste different to normal",
+          affected: false,
+        },
+      ],
       postcode: '',
     }
+  },
+  methods: {
+    toggleAffected(n) {
+      this.symptoms[n].affected = !this.symptoms[n].affected
+    },
+    handleCreate(n) {
+      console.log('Child has been created.', n)
+    },
   },
 }
 </script>
