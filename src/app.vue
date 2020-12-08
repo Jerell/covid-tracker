@@ -44,9 +44,11 @@ export default {
   max-width: 100vw;
 }
 
+html,
 body {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  margin: 0;
+  overflow: scroll;
   background: $color-body-bg;
 }
 #app {
