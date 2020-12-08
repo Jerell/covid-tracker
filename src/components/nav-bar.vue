@@ -13,11 +13,6 @@ export default {
           icon: 'book-open-variant',
         },
         {
-          name: 'map',
-          title: 'Map',
-          icon: 'map',
-        },
-        {
           name: 'symptoms',
           title: 'Symptom Checker',
           icon: 'thermometer-alert',
@@ -26,6 +21,11 @@ export default {
           name: 'result',
           title: 'Enter test result',
           icon: 'test-tube',
+        },
+        {
+          name: 'map',
+          title: 'Map',
+          icon: 'map',
         },
       ],
       loggedInNavRoutes: [
