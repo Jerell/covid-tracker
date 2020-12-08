@@ -11,7 +11,7 @@ export default {
       return this.affected ? { boxShadow: '0 0 15px green inset' } : {}
     },
     type() {
-      return this.affected ? '' : 'is-danger'
+      return this.affected ? 'is-danger' : ''
     },
   },
 }

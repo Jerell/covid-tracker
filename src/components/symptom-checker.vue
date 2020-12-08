@@ -7,6 +7,9 @@
       :n="i"
       @toggle="toggleAffected"
     ></individualsymptom>
+    <b-button type="is-link" class="my-3" expanded :disabled="!canBook"
+      >Book a test</b-button
+    >
   </section>
 </template>
 
@@ -36,15 +39,20 @@ export default {
           affected: false,
         },
       ],
-      postcode: '',
+      canBook: false,
     }
   },
   methods: {
     toggleAffected(n) {
       this.symptoms[n].affected = !this.symptoms[n].affected
+      this.check()
     },
-    handleCreate(n) {
-      console.log('Child has been created.', n)
+    check() {
+      if (this.symptoms.map((s) => s.affected).every((a) => a)) {
+        this.canBook = true
+      } else {
+        this.canBook = false
+      }
     },
   },
 }
