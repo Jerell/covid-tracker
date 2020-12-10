@@ -7,15 +7,28 @@ export default {
       remaining: '',
     }
   },
+  mounted() {
+    if (localStorage.name) {
+      this.end = localStorage.getItem('isolation-end')
+    }
+    this.secondsToDhms()
+  },
   methods: {
     setTime() {
       const days = 14
       const now = new Date()
       console.log(now)
       this.end = new Date(now).setDate(now.getDate() + days)
+      this.persistTime()
       this.secondsToDhms()
     },
+    persistTime() {
+      localStorage.setItem('isolation-end', this.end)
+    },
     secondsToDhms() {
+      if (!this.end) {
+        return
+      }
       const seconds = Math.floor((this.end - new Date()) / 1000)
       const d = Math.floor(seconds / (3600 * 24))
       const h = Math.floor((seconds % (3600 * 24)) / 3600)
