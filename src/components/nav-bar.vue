@@ -18,7 +18,7 @@ export default {
           icon: 'thermometer-alert',
         },
         {
-          name: 'result',
+          name: 'enter-result',
           title: 'Enter test result',
           icon: 'test-tube',
         },

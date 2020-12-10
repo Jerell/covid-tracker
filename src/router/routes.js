@@ -12,6 +12,11 @@ export default [
     component: () => lazyLoadView(import('@views/map.vue')),
   },
   {
+    path: '/enter-result',
+    name: 'enter-result',
+    component: () => lazyLoadView(import('@views/enter-result.vue')),
+  },
+  {
     path: '/symptoms',
     name: 'symptoms',
     component: () => lazyLoadView(import('@views/symptoms.vue')),
