@@ -4,9 +4,10 @@ import appConfig from '@src/app.config'
 import Layout from '@layouts/main.vue'
 import RegistrationForm from '@components/registration-form.vue'
 import PostcodeInfo from '@components/postcode-info.vue'
+import IsolationTimer from '@components/isolation-timer.vue'
 
 export default {
-  components: { Layout, RegistrationForm, PostcodeInfo },
+  components: { Layout, RegistrationForm, PostcodeInfo, IsolationTimer },
   data() {
     return {
       name: '',
@@ -47,7 +48,8 @@ export default {
         @click="toggleEditMode"
         ><b-icon icon="pencil"></b-icon></b-button
     ></h1>
-    <RegistrationForm v-if="editing"></RegistrationForm>
+    <RegistrationForm v-if="editing" @done="toggleEditMode"></RegistrationForm>
+    <IsolationTimer></IsolationTimer>
     <PostcodeInfo></PostcodeInfo>
   </Layout>
 </template>

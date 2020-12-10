@@ -19,7 +19,13 @@
         @input="update"
       ></b-input>
     </b-field>
-    <b-button type="is-primary" class="mb-3" expanded>Done</b-button>
+    <b-button
+      type="is-primary"
+      class="mb-3"
+      expanded
+      @click.native="$emit('done')"
+      >Done</b-button
+    >
 
     <p class="my-5">Privacy policy</p>
   </section>
