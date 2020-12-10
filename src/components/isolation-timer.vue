@@ -52,7 +52,7 @@ export default {
 
 <template>
   <section>
-    <h5 class="title has-text-white is-5 m-0">Self Isolate</h5>
+    <h5 class="title has-text-white is-5 m-0">You should self-isolate for</h5>
     <h3 class="title has-text-white is-3 mb-2">{{ remaining }}</h3>
     <b-button type="is-primary" class="mb-3" expanded @click="setTime"
       >Set</b-button
