@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     setTime() {
-      const days = 14
+      const days = 10
       const now = new Date()
       console.log(now)
       this.end = new Date(now).setDate(now.getDate() + days)
