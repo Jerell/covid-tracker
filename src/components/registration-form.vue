@@ -1,17 +1,11 @@
 <template>
   <section>
     <b-field>
-      <b-input
-        v-model="name"
-        :value="name"
-        placeholder="Name"
-        @input="persistName"
-      ></b-input>
+      <b-input v-model="name" placeholder="Name" @input="persistName"></b-input>
     </b-field>
 
     <b-field>
       <b-input
-        v-model="input"
         :value="postcode"
         placeholder="Postcode district"
         pattern="[A-Z]{1,2}\d[A-Z\d]?"
@@ -53,7 +47,8 @@ export default {
     persistPostcode() {
       localStorage.setItem('postcode', this.postcode)
     },
-    update() {
+    update(e) {
+      this.input = e
       const pattern = RegExp('[A-Z]{1,2}\\d[A-Z\\d]?')
       const valid = pattern.test(this.input)
       if (valid) {
