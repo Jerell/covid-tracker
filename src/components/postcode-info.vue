@@ -45,7 +45,7 @@ export default {
     <div class="status">
       <p>Your postcode district</p>
       <h3 class="title has-text-white is-3 m-0">{{ postcode }}</h3>
-      <h4 class="title has-text-white is-4">Risk level: {{ tier }}</h4>
+      <h4 class="title has-text-white is-4">Restriction tier: {{ tier }}</h4>
     </div>
     <p class="my-2">The restrictions in place are as follows:</p>
     <p v-for="r in restrictions[tier]" :key="r">{{ r }}</p>
