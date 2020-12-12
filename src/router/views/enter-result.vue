@@ -14,7 +14,7 @@ export default {
     return {
       code: '',
       input: '',
-      end: 0,
+      end: localStorage['isolation-end'] ? localStorage['isolation-end'] : 0,
       loading: false,
     }
   },
@@ -82,6 +82,6 @@ export default {
       @click="check"
       >Submit</b-button
     >
-    <IsolationTimer v-if="end" :end="end"></IsolationTimer>
+    <IsolationTimer v-if="end" :pend="end"></IsolationTimer>
   </Layout>
 </template>

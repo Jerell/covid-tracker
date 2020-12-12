@@ -16,6 +16,7 @@ export default {
         ? `Welcome, ${localStorage.name}`
         : "Let's get started",
       editing: false,
+      end: localStorage['isolation-end'] ? localStorage['isolation-end'] : 0,
     }
   },
   page: {
@@ -49,7 +50,7 @@ export default {
         ><b-icon icon="pencil"></b-icon></b-button
     ></h1>
     <RegistrationForm v-if="editing" @done="toggleEditMode"></RegistrationForm>
-    <IsolationTimer></IsolationTimer>
+    <IsolationTimer v-if="end" :pend="end"></IsolationTimer>
     <PostcodeInfo></PostcodeInfo>
   </Layout>
 </template>

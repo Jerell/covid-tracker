@@ -29,10 +29,10 @@ export default {
       localStorage.setItem('isolation-end', this.end)
     },
     secondsToDhms() {
-      if (new Date(this.end) < new Date()) {
-        this.end = 0
-        localStorage.removeItem('isolation-end')
-      }
+      // if (new Date(this.end) < new Date()) {
+      //   this.end = 0
+      //   localStorage.removeItem('isolation-end')
+      // }
       if (!this.end) {
         return
       }

@@ -11,7 +11,7 @@
 
     <b-field>
       <b-input
-        v-model="postcode"
+        v-model="input"
         :value="postcode"
         placeholder="Postcode district"
         pattern="[A-Z]{1,2}\d[A-Z\d]?"
@@ -37,6 +37,7 @@ export default {
     return {
       name: '',
       postcode: '',
+      input: '',
     }
   },
   mounted() {
@@ -54,10 +55,13 @@ export default {
     },
     update() {
       const pattern = RegExp('[A-Z]{1,2}\\d[A-Z\\d]?')
-      const valid = pattern.test(this.postcode)
+      const valid = pattern.test(this.input)
       if (valid) {
-        this.persistPostcode()
+        this.postcode = this.input
+      } else {
+        this.postcode = ''
       }
+      this.persistPostcode()
     },
   },
 }
