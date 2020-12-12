@@ -3,12 +3,32 @@ export default {
   data() {
     return {
       postcode: '',
-      risk: Math.ceil(Math.random() * Math.floor(4)),
+      tier: Math.floor(Math.random() * 4),
       restrictions: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        ['None'],
+        [
+          'Follow the rule of six if meeting indoors or outdoors',
+          'Pubs and restaurants to shut at 11pm',
+          'People encouraged to minimise travel and work from home where possible',
+          'Spectators allowed at sports events and live performances (limited numbers)',
+          'Personal care including hairdressing allowed',
+        ],
+        [
+          'No household mixing indoors',
+          'Rule of six will apply outdoors',
+          'Pubs and restaurants to shut at 11pm',
+          'Alcohol only served as part of substantial meal',
+          'Spectators allowed at sports events and live performances (limited numbers)',
+          'Personal care including hairdressing allowed',
+        ],
+        [
+          'No household mixing indoors or outdoors in hospitality venues or private gardens',
+          'Rule of six applies in outdoor public spaces like parks',
+          'Pubs/restaurants closed except for delivery and takeaway',
+          'Indoor entertainment venues closed',
+          'Guidance against travelling in and out of the area',
+          'Personal care including hairdressing allowed',
+        ],
       ],
     }
   },
@@ -25,10 +45,10 @@ export default {
     <div class="status">
       <p>Your postcode district</p>
       <h3 class="title has-text-white is-3 m-0">{{ postcode }}</h3>
-      <h4 class="title has-text-white is-4">Risk level: {{ risk }}</h4>
+      <h4 class="title has-text-white is-4">Risk level: {{ tier }}</h4>
     </div>
     <p class="my-2">The restrictions in place are as follows:</p>
-    <p v-for="r in restrictions.slice(0, risk)" :key="r">{{ r }}</p>
+    <p v-for="r in restrictions[tier]" :key="r">{{ r }}</p>
   </section>
 </template>
 
