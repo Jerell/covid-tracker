@@ -22,11 +22,11 @@ export default {
           title: 'Enter test result',
           icon: 'test-tube',
         },
-        {
-          name: 'map',
-          title: 'Map',
-          icon: 'map',
-        },
+        // {
+        //   name: 'map',
+        //   title: 'Map',
+        //   icon: 'map',
+        // },
       ],
       loggedInNavRoutes: [
         {
