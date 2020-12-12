@@ -33,7 +33,7 @@ export default {
           affected: false,
         },
         {
-          lead: 'A loss or change to your send of smell or taste',
+          lead: 'A loss or change to your sense of smell or taste',
           desc:
             "this means you've noticed you cannot smell or taste anything, or things smell or taste different to normal",
           affected: false,
