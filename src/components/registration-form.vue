@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    if (localStorage.name) {
+    if (localStorage.name || localStorage.postcode) {
       this.name = localStorage.getItem('name')
       this.postcode = localStorage.getItem('postcode')
     }
