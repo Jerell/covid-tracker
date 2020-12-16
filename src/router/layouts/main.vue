@@ -1,16 +1,25 @@
 <script>
 import NavBar from '@components/nav-bar.vue'
+import PrivacyInfo from '@components/privacy-info.vue'
 
 export default {
-  components: { NavBar },
+  components: { NavBar, PrivacyInfo },
+  data() {
+    return {
+      privacyAccepted: localStorage['privacy-agreement-accepted'],
+    }
+  },
 }
 </script>
 
 <template>
   <div :class="$style.container">
     <h1 class="title has-text-white p-1">COVID-19 Track & Trace</h1>
-    <slot />
-    <NavBar class="mt-3 py-3" />
+    <PrivacyInfo v-if="!privacyAccepted"></PrivacyInfo>
+    <div v-else>
+      <slot />
+      <NavBar class="mt-3 py-3" />
+    </div>
   </div>
 </template>
 

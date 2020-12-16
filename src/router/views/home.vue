@@ -7,7 +7,12 @@ import PostcodeInfo from '@components/postcode-info.vue'
 import IsolationTimer from '@components/isolation-timer.vue'
 
 export default {
-  components: { Layout, RegistrationForm, PostcodeInfo, IsolationTimer },
+  components: {
+    Layout,
+    RegistrationForm,
+    PostcodeInfo,
+    IsolationTimer,
+  },
   data() {
     return {
       name: '',
@@ -42,13 +47,13 @@ export default {
 
 <template>
   <Layout>
-    <h1 class="subtitle is-3 has-text-white"
+    <h3 class="subtitle is-3 has-text-white"
       >{{ message }}
       <b-button
         :class="{ 'is-primary is-light': editing }"
         @click="toggleEditMode"
         ><b-icon icon="pencil"></b-icon></b-button
-    ></h1>
+    ></h3>
     <RegistrationForm v-if="editing" @done="toggleEditMode"></RegistrationForm>
     <IsolationTimer v-if="end" :pend="end"></IsolationTimer>
     <PostcodeInfo></PostcodeInfo>
