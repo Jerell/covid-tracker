@@ -1,9 +1,11 @@
 <script>
+const fetch = require('node-fetch')
+
 export default {
   data() {
     return {
       postcode: '',
-      tier: Math.floor(Math.random() * 4),
+      tier: 0,
       restrictions: [
         ['None'],
         [
@@ -36,6 +38,24 @@ export default {
     if (localStorage.postcode) {
       this.postcode = localStorage.getItem('postcode')
     }
+    if (!localStorage.tiers) {
+      this.getTiers()
+    } else {
+      this.tier = JSON.parse(localStorage.tiers)[this.postcode]
+    }
+  },
+  methods: {
+    async getTiers() {
+      const response = await fetch(
+        `http://covid19-middleware.herokuapp.com/api/getAllRestrictions`
+      )
+      const json = await response.json()
+      console.log(json)
+      console.log(this.postcode)
+      localStorage.setItem('tiers', JSON.stringify(json))
+      this.tier = json[this.postcode]
+      return json
+    },
   },
 }
 </script>

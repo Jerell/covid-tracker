@@ -55,7 +55,7 @@ export default {
         ><b-icon icon="pencil"></b-icon></b-button
     ></h3>
     <RegistrationForm v-if="editing" @done="toggleEditMode"></RegistrationForm>
-    <IsolationTimer v-if="end" :pend="end"></IsolationTimer>
+    <IsolationTimer v-if="end"></IsolationTimer>
     <PostcodeInfo></PostcodeInfo>
   </Layout>
 </template>
