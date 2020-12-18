@@ -3,9 +3,13 @@ export default {
   mounted() {
     const districts = [...document.querySelectorAll('#areapaths path')]
     const tiers = JSON.parse(localStorage.tiers)
+    const selectedPostcode = localStorage.postcode
 
     districts.forEach((district) => {
       const districtLetters = district.id.slice(0, 2).replace('_', '')
+      if (selectedPostcode.replace(/[0-9]/g, '') === districtLetters) {
+        district.classList.add('here')
+      }
       let pcArea = 1
       let postcode = districtLetters + pcArea
       let tier = tiers[postcode]

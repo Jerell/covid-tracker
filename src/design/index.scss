@@ -23,6 +23,10 @@
 .tier-1 {
   fill: lighten($color-highlight, 30%);
 }
+.here {
+  stroke: black;
+  stroke-width: 3;
+}
 
 :export {
   // Any values that need to be accessible from JavaScript
