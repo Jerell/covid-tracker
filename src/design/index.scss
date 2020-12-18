@@ -12,6 +12,18 @@
     -10px 0 lighten($color-body-bg, 10%);
 }
 
+.tier-3 {
+  fill: $color-highlight;
+}
+
+.tier-2 {
+  fill: lighten($color-highlight, 15%);
+}
+
+.tier-1 {
+  fill: lighten($color-highlight, 30%);
+}
+
 :export {
   // Any values that need to be accessible from JavaScript
   // outside of a Vue component can be defined here, prefixed

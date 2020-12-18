@@ -1,7 +1,11 @@
 <script>
+import PostcodeMap from '@components/postcode-map.vue'
 const fetch = require('node-fetch')
 
 export default {
+  components: {
+    PostcodeMap,
+  },
   data() {
     return {
       postcode: '',
@@ -54,7 +58,8 @@ export default {
       console.log(this.postcode)
       localStorage.setItem('tiers', JSON.stringify(json))
       this.tier = json[this.postcode]
-      return json
+      location.reload()
+      // return json
     },
   },
 }
@@ -69,6 +74,7 @@ export default {
     </div>
     <p class="my-2">The restrictions in place are as follows:</p>
     <p v-for="r in restrictions[tier]" :key="r">{{ r }}</p>
+    <PostcodeMap></PostcodeMap>
   </section>
 </template>
 
