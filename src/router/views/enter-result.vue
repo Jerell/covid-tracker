@@ -61,8 +61,9 @@ export default {
 
 <template>
   <Layout>
-    <h1 class="title has-text-white mb-0">Enter Test Result</h1>
-    <b-field label="Confirmation code">
+    <h1 class="title has-text-white">Enter Test Result</h1>
+    <h4 class="subtitle has-text-white is-4 mb-0">Confirmation code</h4>
+    <b-field>
       <b-input
         v-model="input"
         size="is-large"

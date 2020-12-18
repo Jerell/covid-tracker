@@ -21,7 +21,7 @@
       >Done</b-button
     >
 
-    <p class="my-5">Privacy policy</p>
+    <p class="my-5" @click="wipe">Clear all info and reset</p>
   </section>
 </template>
 
@@ -57,6 +57,18 @@ export default {
         this.postcode = ''
       }
       this.persistPostcode()
+    },
+    wipe() {
+      const storedItems = [
+        'name',
+        'postcode',
+        'privacy-agreement-accepted',
+        'tiers',
+      ]
+      for (const item of storedItems) {
+        localStorage.removeItem(item)
+      }
+      location.reload()
     },
   },
 }
